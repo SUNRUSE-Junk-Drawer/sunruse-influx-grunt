@@ -1,0 +1,49 @@
+{
+  "name": "sunruse-influx-grunt",
+  "version": "0.0.0",
+  "description": "A Grunt task to compile SUNRUSE.influx code to native code.",
+  "main": "deploy/task.js",
+  "dependencies": {
+    "glob": "^5.0.14",
+    "mkpath": "^0.1.0",
+    "sunruse-influx-toolchain": "^1.0.2"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-coffee": "^0.13.0",
+    "grunt-contrib-copy": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-jasmine-nodejs": "^1.4.3",
+    "jasmine-collection-matchers": "^0.1.0"
+  },
+  "scripts": {
+    "test": "grunt build test",
+    "prepublish": "grunt build deploy"
+  },
+  "files": [
+    "deploy"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SUNRUSE/sunruse-influx-grunt.git"
+  },
+  "keywords": [
+    "sunruse",
+    "influx",
+    "programming",
+    "language",
+    "runtime",
+    "purely",
+    "pure",
+    "functional",
+    "constant",
+    "time"
+  ],
+  "author": "SUNRUSE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SUNRUSE/sunruse-influx-grunt/issues"
+  },
+  "homepage": "https://github.com/SUNRUSE/sunruse-influx-grunt"
+}
