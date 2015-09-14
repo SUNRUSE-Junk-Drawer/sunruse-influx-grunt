@@ -17,7 +17,7 @@ A Grunt task to compile SUNRUSE.influx code to native code.  To use, define the 
 		* targets:
 		An object, where the keys are user-friendly names and the values are objects containing:
 			
-			* platform
+			* platform:
 			The platform module instance to use, e.g. require("sunruse-influx-platforms-javascript")
 			
 			* runAssertions: (defaults to true)
