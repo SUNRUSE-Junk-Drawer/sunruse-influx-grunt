@@ -2,7 +2,7 @@ A Grunt task to compile SUNRUSE.influx code to native code.  To use, define the 
 
 * sunruse-influx:
 	* (target name):
-		* files:
+		* src:
 		An array of one or more glob strings specifying the source code files to compile.
 		
 		* outputs:
