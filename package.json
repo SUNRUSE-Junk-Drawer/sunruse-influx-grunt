@@ -1,8 +1,8 @@
 {
   "name": "sunruse-influx-grunt",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "description": "A Grunt task to compile SUNRUSE.influx code to native code.",
-  "main": "deploy/task.js",
+  "main": "tasks/task.js",
   "dependencies": {
     "glob": "^5.0.14",
     "mkpath": "^0.1.0",
@@ -22,7 +22,7 @@
     "prepublish": "grunt build deploy"
   },
   "files": [
-    "deploy"
+    "tasks", "support"
   ],
   "repository": {
     "type": "git",
@@ -38,7 +38,8 @@
     "pure",
     "functional",
     "constant",
-    "time"
+    "time",
+    "gruntplugin"
   ],
   "author": "SUNRUSE",
   "license": "MIT",

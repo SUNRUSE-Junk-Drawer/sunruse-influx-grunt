@@ -9,12 +9,12 @@ module.exports = (grunt) ->
     
     grunt.registerTask "build", ["clean:build", "coffee:build", "copy:build"]
     grunt.registerTask "test", ["jasmine_nodejs:unit"]
-    grunt.registerTask "deploy", ["clean:deploy", "copy:deploy"]
+    grunt.registerTask "deploy", ["clean:deploy", "copy:deployTasks", "copy:deploySupport"]
         
     grunt.initConfig
         clean:
             build: "build"
-            deploy: "deploy"
+            deploy: ["tasks", "support"]
         jasmine_nodejs:
             options:
                 specNameSuffix: ".js"
@@ -31,12 +31,19 @@ module.exports = (grunt) ->
                     src: ["**/*.sh"]
                     dest: "build"
                 ]
-            deploy:
+            deployTasks:
                 files: [
                     expand: true
-                    cwd: "build"
+                    cwd: "build/tasks"
                     src: ["**/*.js", "!**/*-unit.js", "**/*.sh"]
-                    dest: "deploy"
+                    dest: "tasks"
+                ]
+            deploySupport:
+                files: [
+                    expand: true
+                    cwd: "build/support"
+                    src: ["**/*.js", "!**/*-unit.js", "**/*.sh"]
+                    dest: "support"
                 ]
         coffee:
             build:
