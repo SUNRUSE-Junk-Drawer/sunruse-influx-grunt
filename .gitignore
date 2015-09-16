@@ -1,4 +1,4 @@
 node_modules
 build
-support
-tasks
+/support
+/tasks
