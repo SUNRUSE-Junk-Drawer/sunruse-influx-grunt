@@ -39,7 +39,8 @@ module.exports = (grunt, outputs, targetName, target, tokenized, notifyWritingFi
 						grunt.fail.warn err
 						notifyFileFailed()
 					else
-						module.exports.fs.writeFile filename, (platform.compile platform, output.input, built), (err) ->
+						options = if output.targetOptions then output.targetOptions[targetName] else undefined
+						module.exports.fs.writeFile filename, (platform.compile platform, output.input, built, options), (err) ->
 							if err
 								grunt.fail.warn err
 								notifyFileFailed()

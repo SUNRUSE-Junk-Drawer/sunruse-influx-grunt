@@ -14,6 +14,9 @@ A Grunt task to compile SUNRUSE.influx code to native code.  To use, define the 
 			* input:
 			A value object (see sunruse-influx-toolchain documentation) to compile as input to the function.
 			
+			* targetOptions:
+			An object where the keys are the names of the targets and the values are the options to pass to the platform when compiling.  See the platforms' own documentation for what can be entered here.
+			
 		* targets:
 		An object, where the keys are user-friendly names and the values are objects containing:
 			

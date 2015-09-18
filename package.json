@@ -1,6 +1,6 @@
 {
   "name": "sunruse-influx-grunt",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Grunt task to compile SUNRUSE.influx code to native code.",
   "main": "tasks/task.js",
   "dependencies": {

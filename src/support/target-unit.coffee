@@ -42,13 +42,17 @@ describe "target", ->
 				"output one name":
 					name: "output one function name"
 					input: "output one input"
+					targetOptions:
+						"another target name": "wrong options"
 				"output two name":
 					name: "output two function name"
 					input: "output two input"
 				"output three name":
 					name: "output three function name"
 					input: "output three input"
-					
+					targetOptions: 
+						"target name": "target specific options"
+						"another target name": "wrong options"
 			targetInstance = 
 				prefix: "filename prefix"
 				suffix: "filename suffix" 
@@ -62,17 +66,20 @@ describe "target", ->
 								assertionPass: "platform b primitive b assertion pass"
 							"test primitive c":
 								assertionPass: "platform b primitive c assertion pass"
-						compile: (_platform, input, output) ->
+						compile: (_platform, input, output, options) ->
 							expect(_platform).toBe platformInstance
 							switch input
 								when "output one input"
 									expect(output).toEqual "output one output"
+									expect(options).toBeUndefined()
 									"output one native code"
 								when "output two input"
 									expect(output).toEqual "output two output"
+									expect(options).toBeUndefined()
 									"output two native code"
 								when "output three input"
 									expect(output).toEqual "output three output"
+									expect(options).toEqual "target specific options"
 									"output three native code"
 								else expect(false).toBeTruthy()
 			notifyWritingFile = jasmine.createSpy "notifyWritingFile"
